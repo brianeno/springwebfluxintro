@@ -19,12 +19,12 @@ public class SensorReadingController {
     private final SensorService service;
 
     @GetMapping
-    public Flux<SensorReading> getAllUsers(){
+    public Flux<SensorReading> getAllUsers() {
         return service.findAll();
     }
 
     @GetMapping("{id}")
-    public Mono<ResponseEntity<SensorReading>> getUserById(@PathVariable Integer id){
+    public Mono<ResponseEntity<SensorReading>> getUserById(@PathVariable Integer id) {
         Mono<SensorReading> readings = service.findById(id);
         return readings.map(ResponseEntity::ok)
                 .defaultIfEmpty(ResponseEntity.notFound().build());
