@@ -14,11 +14,11 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 public class WebFluxIntroRouter {
 
     @Bean
-    public RouterFunction<ServerResponse> routeHelloWebFlux(WebFluxIntroHandler webFluxIntroHandler) {
+    public RouterFunction<ServerResponse> getAllSensorRoutes(WebFluxIntroHandler webFluxIntroHandler) {
 
-        return RouterFunctions.route(RequestPredicates.GET("/readings/{id}")
+        return RouterFunctions.route(RequestPredicates.GET("/v1/readings/{id}")
                         .and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), webFluxIntroHandler::helloSpringWebFluxMono).
-                andRoute(RequestPredicates.GET("/readings")
+                andRoute(RequestPredicates.GET("/v1/readings")
                         .and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), webFluxIntroHandler::helloSpringWebFluxFlux);
     }
 }
