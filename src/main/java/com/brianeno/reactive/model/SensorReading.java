@@ -17,4 +17,5 @@ public class SensorReading {
     private Integer id;
     private LocalDateTime timeStamp;
     private String value;
+    private LocalDateTime dateCreated;
 }

@@ -3,6 +3,7 @@ package com.brianeno.reactive.router;
 import com.brianeno.reactive.ReactiveApplication;
 import com.brianeno.reactive.handler.WebFluxIntroHandler;
 import com.brianeno.reactive.model.SensorReading;
+import com.brianeno.reactive.model.dto.SensorReadingDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +31,7 @@ class WebFluxIntroRouterTest {
                 .exchange()
                 .expectStatus()
                 .isOk()
-                .expectBody(SensorReading.class);
+                .expectBody(SensorReadingDto.class);
     }
 
     @Test

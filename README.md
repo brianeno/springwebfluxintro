@@ -1,10 +1,24 @@
 # springwebfluxintro
-Introduction to Spring Web Flux
-
+Introduction to Spring Web Flux, demonstrates functional as well as annotated methods.
 
 
 # Getting Started
+./gradlew clean build
 
+./gradlew runBoot
+
+## Annotated Endpoints
+http://localhost:8080/v1/readings
+
+http://localhost:8080/v1/readings
+
+## Functional Endpoints
+http://localhost:8080/v2/readings
+
+http://localhost:8080/v2/readings/1
+
+
+# Generated content from Spring Initlizr
 ### Reference Documentation
 For further reference, please consider the following sections:
 

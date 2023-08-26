@@ -2,6 +2,7 @@ package com.brianeno.reactive.controller;
 
 import com.brianeno.reactive.ReactiveApplication;
 import com.brianeno.reactive.model.SensorReading;
+import com.brianeno.reactive.model.dto.SensorReadingDto;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +35,7 @@ public class SensorReadingControllerTest {
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk()
-                .expectBody(SensorReading.class)
+                .expectBody(SensorReadingDto.class)
                 .value(reading -> reading.getId().equals(1));
     }
 }
