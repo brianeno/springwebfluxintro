@@ -5,6 +5,7 @@ import com.brianeno.reactive.service.SensorService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
@@ -23,6 +24,7 @@ public class SensorReadingHandler {
     }
 
     public Mono<ServerResponse> helloSpringWebFluxFlux(ServerRequest request) {
-        return ServerResponse.ok().body(this.service.findAll(), SensorReading.class);
+        return ServerResponse.ok().body(this.service.findAll(), SensorReading.class)
+                .switchIfEmpty(ServerResponse.notFound().build());
     }
 }
