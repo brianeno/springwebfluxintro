@@ -1,7 +1,7 @@
 package com.brianeno.reactive.router;
 
 import com.brianeno.reactive.ReactiveApplication;
-import com.brianeno.reactive.handler.WebFluxIntroHandler;
+import com.brianeno.reactive.handler.SensorReadingHandler;
 import com.brianeno.reactive.model.SensorReading;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +11,13 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = ReactiveApplication.class)
-class WebFluxIntroRouterTest {
+class SensorReadingRouterTest {
 
     @Autowired
-    private WebFluxIntroRouter config;
+    private SensorReadingRouter config;
 
     @Autowired
-    private WebFluxIntroHandler handler;
+    private SensorReadingHandler handler;
 
     @Test
     void givenReadingId_whenGetReadingById_thenCorrectReading() {

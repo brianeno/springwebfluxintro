@@ -8,11 +8,11 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
 @Component
-public class WebFluxIntroHandler {
+public class SensorReadingHandler {
 
     private final SensorService service;
 
-    public WebFluxIntroHandler(final SensorService service) {
+    public SensorReadingHandler(final SensorService service) {
         this.service = service;
     }
 
